@@ -20,3 +20,10 @@ function renderQuestionCard(entry) {
     let answers = [...entry.incorrect.slice(), entry.correct];
     return [entry.question, answers, entry.correct];
 }
+
+function startGame() {
+    let questions = shuffleQNA();
+    questions.forEach( question => {
+        console.log(renderQuestionCard(question));
+    })
+}
