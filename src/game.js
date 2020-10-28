@@ -18,7 +18,7 @@ function shuffleQNA() {
 
 function renderQuestionCard(entry) {
     let answers = [...entry.incorrect.slice(), entry.correct];
-    return [entry.question, answers, entry.correct];
+    return {question: entry.question, answers: answers, correct: entry.correct};
 }
 
 function startGame() {
