@@ -9,11 +9,14 @@ console.log(qna);
 
 function shuffleQNA() {
     let numArray = [];
-    // while(numArray.length < 10) {
     for(let i = 0; i < qna.length; i++) {
         let num = Math.floor(Math.random() * Math.floor(qna.length));
         if(numArray.length < 10 && !numArray.includes(num)) numArray.push(num);
     }
-    // return numArray;
     return numArray.map(num => qna[num]);
-} 
+}
+
+function renderQuestionCard(entry) {
+    let answers = [...entry.incorrect.slice(), entry.correct];
+    return [entry.question, answers, entry.correct];
+}
