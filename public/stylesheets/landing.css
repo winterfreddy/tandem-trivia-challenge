@@ -9,9 +9,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 45px;
 }
 
-.fa-snowman {
+.fa-paper-plane {
     font-size: 200px;
     color: rgb(101, 171, 251);
+    margin: 20px;
+}
+
+.right-section {
+    margin: 20px;
 }
