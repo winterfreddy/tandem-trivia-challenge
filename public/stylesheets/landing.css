@@ -19,5 +19,24 @@
 }
 
 .right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 20px;
+}
+
+.startGame {
+    background: none;
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 20px;
+    width: 80%;
+    border-radius: 5px;
+    border: 2px solid rgb(101, 171, 251);
+}
+
+.startGame:hover {
+    background: rgb(101, 171, 251);
+    color: white;
 }
