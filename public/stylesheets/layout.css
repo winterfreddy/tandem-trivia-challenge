@@ -1,0 +1,15 @@
+body {
+    background: rgb(101, 171, 251);
+}
+
+.navbar {
+    display: flex;
+    font-size: 25px;
+    background: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 15px 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
