@@ -1,0 +1,17 @@
+.landing-modal {
+    background: white;
+    height: 50vh;
+    width: 70vh;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    align-content: space-around;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-snowman {
+    font-size: 200px;
+    color: rgb(101, 171, 251);
+}
