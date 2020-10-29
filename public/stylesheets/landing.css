@@ -12,6 +12,12 @@
     font-size: 45px;
 }
 
+.far.fa-paper-plane {
+    font-size: 20px;
+    margin: auto;
+    margin-left: 5px;
+}
+
 .fa-paper-plane {
     font-size: 200px;
     color: rgb(101, 171, 251);
