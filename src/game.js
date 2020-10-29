@@ -23,6 +23,8 @@ function renderQuestionCard(entry) {
 
 function startGame() {
     let questions = shuffleQNA();
+    let landingModal = document.querySelector('.landing-modal');
+    landingModal.style.setProperty('display', 'none');
     questions.forEach( question => {
         console.log(renderQuestionCard(question));
     })

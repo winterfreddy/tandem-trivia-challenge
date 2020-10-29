@@ -39,4 +39,5 @@
 .startGame:hover {
     background: rgb(101, 171, 251);
     color: white;
+    cursor: pointer;
 }

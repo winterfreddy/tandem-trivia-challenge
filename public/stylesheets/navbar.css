@@ -6,6 +6,7 @@
 
 .bar-icon:hover {
     color: rgb(101, 171, 251);
+    cursor: pointer;
 }
 
 .title {
