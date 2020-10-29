@@ -5,8 +5,6 @@ fetch('./public/Apprentice_TandemFor400_Data.json')
     .then( (res) => res.json())
     .then( (data) => qna = data);
 
-console.log(qna);
-
 function shuffleQNA() {
     let numArray = [];
     for(let i = 0; i < qna.length; i++) {
@@ -16,9 +14,15 @@ function shuffleQNA() {
     return numArray.map(num => qna[num]);
 }
 
+function shuffleAns(array) {
+    array.sort(() => Math.random() - 0.5);
+    return array;
+}
+
 function renderQuestionCard(entry) {
     let answers = [...entry.incorrect.slice(), entry.correct];
-    return {question: entry.question, answers: answers, correct: entry.correct};
+    let shuffledAnswers = shuffleAns(answers);
+    return {question: entry.question, answers: shuffledAnswers, correct: entry.correct};
 }
 
 function startGame() {
