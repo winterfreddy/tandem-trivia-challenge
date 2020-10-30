@@ -25,11 +25,23 @@ function renderQuestionCard(entry) {
     return {question: entry.question, answers: shuffledAnswers, correct: entry.correct};
 }
 
+function renderAns(ansArray) {
+    // console.log(ansArray);
+    for(let i = 0; i < ansArray.length; i++) {
+        document.querySelector(`.c${i+1}`).innerHTML = ansArray[i];
+    }
+}
+
 function startGame() {
     let questions = shuffleQNA();
     let landingModal = document.querySelector('.landing-modal');
     landingModal.style.setProperty('display', 'none');
-    questions.forEach( question => {
-        console.log(renderQuestionCard(question));
+    let numQuestion = document.querySelector('.num-question');
+    let questionPrompt = document.querySelector('.question-prompt');
+    questions.forEach( (question, idx) => {
+        numQuestion.textContent = `Question #${idx}`;
+        let questionCard = renderQuestionCard(question);
+        questionPrompt.textContent = questionCard.question;
+        renderAns(questionCard.answers);
     })
 }
