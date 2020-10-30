@@ -1,4 +1,5 @@
-.landing-modal {
+.landing-modal,
+.end-game-modal {
     background: white;
     height: 50vh;
     width: 70vh;
@@ -17,7 +18,8 @@
     margin-left: 5px;
 }
 
-.fa-paper-plane {
+.fa-paper-plane,
+.fa-map-marked-alt {
     font-size: 200px;
     color: rgb(101, 171, 251);
     margin: 20px;
@@ -31,7 +33,8 @@
     margin: 20px;
 }
 
-.startGame {
+.startGame,
+.restartGame {
     background: none;
     font-size: 30px;
     padding: 5px;
@@ -41,7 +44,8 @@
     border: 2px solid rgb(101, 171, 251);
 }
 
-.startGame:hover {
+.startGame:hover,
+.restartGame:hover {
     background: rgb(101, 171, 251);
     color: white;
     cursor: pointer;

@@ -15,13 +15,19 @@ body {
 }
 
 .landing-page,
-.game-screen {
+.game-screen,
+.game-over-screen {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10vh;
 }
 
-.game-screen {
+.game-screen,
+.game-over-screen {
     margin-top: 5vh;
+}
+
+.game-over-screen {
+    display: none;
 }

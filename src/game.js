@@ -6,8 +6,10 @@ let score = 0;
 let correctAns = "";
 let landingModal = document.querySelector('.landing-modal');
 let gameScreen = document.querySelector('.game-modal');
+let gameOverScreen = document.querySelector('.game-over-screen');
 let numQuestion = document.querySelector('.num-question');
 let questionPrompt = document.querySelector('.question-prompt');
+let scoreText = document.querySelector('.score');
 
 
 fetch('./public/Apprentice_TandemFor400_Data.json')
@@ -44,6 +46,7 @@ function renderAns(ansArray) {
 function startGame() {
     questions = shuffleQNA();
     landingModal.style.setProperty('display', 'none');
+    gameOverScreen.style.setProperty('display', 'none');
     gameScreen.style.setProperty('display', 'flex');
     handleQuestion();
 }
@@ -51,14 +54,16 @@ function startGame() {
 function handleQuestion() {
     clearAllChecks();
     if(idx >= questions.length) {
-        console.log("reached the end!");
+        gameOver();
     }
-    numQuestion.textContent = `Question #${idx+1}`;
-    let questionCard = renderQuestionCard(questions[idx]);
-    questionPrompt.textContent = questionCard.question;
-    renderAns(questionCard.answers);
-    correctAns = questionCard.correct;
-    idx++;
+    else {
+        numQuestion.textContent = `Question #${idx+1}`;
+        let questionCard = renderQuestionCard(questions[idx]);
+        questionPrompt.textContent = questionCard.question;
+        renderAns(questionCard.answers);
+        correctAns = questionCard.correct;
+        idx++;
+    }
 }
 
 function handleAnswer() {
@@ -90,4 +95,10 @@ function clearAllChecks() {
         document.querySelector(`.cbkg${i}`).style.setProperty('background', 'none');
         document.getElementById(`c${i}`).checked = false;
     }
+}
+
+function gameOver() {
+    gameScreen.style.setProperty('display', 'none');
+    gameOverScreen.style.setProperty('display', 'flex');
+    scoreText.innerHTML = `${score} out of 1000`;
 }
