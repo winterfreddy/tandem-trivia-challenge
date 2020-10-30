@@ -1,5 +1,7 @@
 // script file for game screen and game over screen
 let qna = [];
+let questions = [];
+let idx = 0;
 
 fetch('./public/Apprentice_TandemFor400_Data.json')
     .then( (res) => res.json())
@@ -32,17 +34,23 @@ function renderAns(ansArray) {
 }
 
 function startGame() {
-    let questions = shuffleQNA();
+    questions = shuffleQNA();
     let landingModal = document.querySelector('.landing-modal');
     landingModal.style.setProperty('display', 'none');
     let gameScreen = document.querySelector('.game-modal');
     gameScreen.style.setProperty('display', 'flex');
+    handleQuestion();
+}
+
+function handleQuestion() {
+    if(idx >= questions.length) {
+        console.log("reached the end!");
+    }
     let numQuestion = document.querySelector('.num-question');
     let questionPrompt = document.querySelector('.question-prompt');
-    questions.forEach( (question, idx) => {
-        numQuestion.textContent = `Question #${idx}`;
-        let questionCard = renderQuestionCard(question);
-        questionPrompt.textContent = questionCard.question;
-        renderAns(questionCard.answers);
-    })
+    numQuestion.textContent = `Question #${idx+1}`;
+    let questionCard = renderQuestionCard(questions[idx]);
+    questionPrompt.textContent = questionCard.question;
+    renderAns(questionCard.answers);
+    idx++;
 }
