@@ -14,9 +14,14 @@ body {
     padding: 5px;
 }
 
-.landing-page {
+.landing-page,
+.game-screen {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10vh;
+}
+
+.game-screen {
+    margin-top: 5vh;
 }

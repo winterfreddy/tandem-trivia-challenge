@@ -26,7 +26,6 @@ function renderQuestionCard(entry) {
 }
 
 function renderAns(ansArray) {
-    // console.log(ansArray);
     for(let i = 0; i < ansArray.length; i++) {
         document.querySelector(`.c${i+1}`).innerHTML = ansArray[i];
     }
@@ -36,6 +35,8 @@ function startGame() {
     let questions = shuffleQNA();
     let landingModal = document.querySelector('.landing-modal');
     landingModal.style.setProperty('display', 'none');
+    let gameScreen = document.querySelector('.game-modal');
+    gameScreen.style.setProperty('display', 'flex');
     let numQuestion = document.querySelector('.num-question');
     let questionPrompt = document.querySelector('.question-prompt');
     questions.forEach( (question, idx) => {
