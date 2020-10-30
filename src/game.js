@@ -101,4 +101,6 @@ function gameOver() {
     gameScreen.style.setProperty('display', 'none');
     gameOverScreen.style.setProperty('display', 'flex');
     scoreText.innerHTML = `${score} out of 1000`;
+    idx = 0;
+    score = 0;
 }
