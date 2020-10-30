@@ -11,6 +11,7 @@ let numQuestion = document.querySelector('.num-question');
 let questionPrompt = document.querySelector('.question-prompt');
 let scoreText = document.querySelector('.score');
 let userError = document.querySelector('.warning');
+let checkButton = document.querySelector('.nextOne');
 
 
 fetch('./public/Apprentice_TandemFor400_Data.json')
@@ -53,6 +54,7 @@ function startGame() {
 }
 
 function handleQuestion() {
+    checkButton.disabled = false;
     clearAllChecks();
     if(idx >= questions.length) {
         gameOver();
@@ -69,6 +71,7 @@ function handleQuestion() {
 
 function handleAnswer() {
     if(userHasChecked()) {
+        checkButton.disabled = true;
         let check = checkAnswers();
         check ? score += 100 : score += 0;
         setTimeout(() => {

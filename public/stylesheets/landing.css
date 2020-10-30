@@ -41,7 +41,8 @@
 }
 
 .startGame,
-.restartGame {
+.restartGame,
+.nextOne {
     background: none;
     font-size: 2vw;
     padding: 5px;
@@ -51,8 +52,13 @@
     border: 2px solid rgb(101, 171, 251);
 }
 
+.nextOne {
+    width: 50%;
+}
+
 .startGame:hover,
-.restartGame:hover {
+.restartGame:hover,
+.nextOne:hover {
     background: rgb(101, 171, 251);
     color: white;
     cursor: pointer;
@@ -73,7 +79,8 @@
     }
 
     .startGame,
-    .restartGame {
+    .restartGame,
+    .nextOne {
         font-size: 2vw;
     }
 }
@@ -93,7 +100,8 @@
     }
 
     .startGame,
-    .restartGame {
+    .restartGame,
+    .nextOne {
         font-size: 3vw;
     }
 }
@@ -113,7 +121,8 @@
     }
 
     .startGame,
-    .restartGame {
+    .restartGame,
+    .nextOne {
         font-size: 8vw;
     }
 }
@@ -134,7 +143,8 @@
     }
 
     .startGame,
-    .restartGame {
+    .restartGame,
+    .nextOne {
         font-size: 7vw;
     }
 
@@ -158,7 +168,8 @@
     }
 
     .startGame,
-    .restartGame {
+    .restartGame,
+    .nextOne {
         font-size: 1vw;
     }
 }
@@ -178,7 +189,8 @@
     }
 
     .startGame,
-    .restartGame {
+    .restartGame,
+    .nextOne {
         font-size: 5vw;
     }
 }
