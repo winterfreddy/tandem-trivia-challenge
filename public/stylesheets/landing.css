@@ -31,13 +31,18 @@
     align-items: center;
     flex-direction: column;
     margin: 20px;
-    font-size: 3vw;
+    font-size: 2vw;
     height: 100%;
+}
+
+.landing-title {
+    font-family: 'Pacifico', cursive;
 }
 
 .landing-subtitle {
     margin-top: 5px;
     font-size: 1vw;
+    font-family: 'Roboto', sans-serif;
 }
 
 .startGame,
@@ -50,6 +55,7 @@
     width: 80%;
     border-radius: 5px;
     border: 2px solid rgb(101, 171, 251);
+    font-family: 'Pacifico', cursive;
 }
 
 .nextOne {
