@@ -78,3 +78,9 @@
 	border-radius: 50%;
 	background: white;
 }
+
+@media only screen and (max-width: 450px) {
+    .container {
+        margin-left: 20px;
+    }
+}
