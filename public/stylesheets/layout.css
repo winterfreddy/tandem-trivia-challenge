@@ -31,3 +31,9 @@ body {
 .game-over-screen {
     display: none;
 }
+
+.warning {
+    color: red;
+    display: none;
+    margin-bottom: 10px;
+}

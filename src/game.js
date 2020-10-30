@@ -10,6 +10,7 @@ let gameOverScreen = document.querySelector('.game-over-screen');
 let numQuestion = document.querySelector('.num-question');
 let questionPrompt = document.querySelector('.question-prompt');
 let scoreText = document.querySelector('.score');
+let userError = document.querySelector('.warning');
 
 
 fetch('./public/Apprentice_TandemFor400_Data.json')
@@ -67,11 +68,29 @@ function handleQuestion() {
 }
 
 function handleAnswer() {
-    let check = checkAnswers();
-    check ? score += 100 : score += 0;
-    setTimeout(() => {
-        handleQuestion();
-    }, 2500);
+    if(userHasChecked()) {
+        let check = checkAnswers();
+        check ? score += 100 : score += 0;
+        setTimeout(() => {
+            handleQuestion();
+        }, 2500);
+    }
+    else {
+        userError.style.setProperty('display', 'block');
+        setTimeout( () => {
+            userError.style.setProperty('display', 'none');
+        }, 1500);
+    }
+}
+
+function userHasChecked() {
+    let value = false;
+    for(let i = 1; i < 5; i++) {
+        if(document.getElementById(`c${i}`).checked === true) {
+            value = true;
+        }
+    }
+    return value;
 }
 
 function checkAnswers() {
