@@ -2,6 +2,13 @@
 let qna = [];
 let questions = [];
 let idx = 0;
+let score = 0;
+let correctAns = "";
+let landingModal = document.querySelector('.landing-modal');
+let gameScreen = document.querySelector('.game-modal');
+let numQuestion = document.querySelector('.num-question');
+let questionPrompt = document.querySelector('.question-prompt');
+
 
 fetch('./public/Apprentice_TandemFor400_Data.json')
     .then( (res) => res.json())
@@ -17,6 +24,7 @@ function shuffleQNA() {
 }
 
 function shuffleAns(array) {
+    if(array.length !== 4) array.push("Blank Space");
     array.sort(() => Math.random() - 0.5);
     return array;
 }
@@ -35,22 +43,51 @@ function renderAns(ansArray) {
 
 function startGame() {
     questions = shuffleQNA();
-    let landingModal = document.querySelector('.landing-modal');
     landingModal.style.setProperty('display', 'none');
-    let gameScreen = document.querySelector('.game-modal');
     gameScreen.style.setProperty('display', 'flex');
     handleQuestion();
 }
 
 function handleQuestion() {
+    clearAllChecks();
     if(idx >= questions.length) {
         console.log("reached the end!");
     }
-    let numQuestion = document.querySelector('.num-question');
-    let questionPrompt = document.querySelector('.question-prompt');
     numQuestion.textContent = `Question #${idx+1}`;
     let questionCard = renderQuestionCard(questions[idx]);
     questionPrompt.textContent = questionCard.question;
     renderAns(questionCard.answers);
+    correctAns = questionCard.correct;
     idx++;
+}
+
+function handleAnswer() {
+    let check = checkAnswers();
+    check ? score += 100 : score += 0;
+    setTimeout(() => {
+        handleQuestion();
+    }, 2500);
+}
+
+function checkAnswers() {
+    let value = false;
+    for(let i = 1; i < 5; i++) {
+        if(document.querySelector(`.c${i}`).innerHTML === correctAns) {
+            document.querySelector(`.cbkg${i}`).style.setProperty('background', 'lightgreen');
+            if(document.getElementById(`c${i}`).checked === true) {
+                value = true;
+            }
+        }
+        else {
+            document.querySelector(`.cbkg${i}`).style.setProperty('background', 'red');
+        }
+    }
+    return value;
+}
+
+function clearAllChecks() {
+    for(let i = 1; i < 5; i++) {
+        document.querySelector(`.cbkg${i}`).style.setProperty('background', 'none');
+        document.getElementById(`c${i}`).checked = false;
+    }
 }
