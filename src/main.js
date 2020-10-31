@@ -14,12 +14,3 @@ function refresh() {
     gameScreen.style.setProperty('display', 'none');
     control.defaultReset();
 }
-
-function masterControl(value) {
-    if(value === 0) {
-        control.startGame();
-    }
-    else {
-        control.handleAnswer();
-    }
-}
