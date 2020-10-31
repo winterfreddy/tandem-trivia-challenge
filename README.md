@@ -14,10 +14,17 @@ See desktop and mobile screenshots below after 'Future Additional Features'.
 * [http-server](https://www.npmjs.com/package/http-server) (for local usage/testing)
 
 ## Key Features of Fly-hoot trivia game
-* Randomly generated questions on every new round
+* Ten randomly generated questions on every new round
 * Users can see what's right or wrong per question submission
-* Final score is displayed at the end of round
 * Users have ability to replay game at the end of the round
+
+## Requirements/Acceptance Criteria
+* A user can view questions
+* Questions with their multiple choice options must be displayed one at a time
+* Questions should not repeat in a round
+* A user can select only 1 answer out of the 4 possible answers
+* The correct answer must be revealed after a user has submitted their answer
+* A user can see the score they received at the end of the round
 
 ## Local Usage/Testing Instructions
 * For local usage/testing, download the repository if you haven't already. Also, please have npm installed for the following steps.
@@ -30,7 +37,7 @@ See desktop and mobile screenshots below after 'Future Additional Features'.
 ## Future Additional Features
 * Animated transitions
 * View missed questions at end of round
-* Show timer to limit how long a user can be on each question
+* Include timer to limit how long a user can be on each question
 
 ## Desktop App Screenshots
 
