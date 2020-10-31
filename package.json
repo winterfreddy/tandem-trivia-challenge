@@ -1,0 +1,24 @@
+{
+  "name": "tandem-trivia-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winterfreddy/tandem-trivia-challenge.git"
+  },
+  "author": "Winfred Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winterfreddy/tandem-trivia-challenge/issues"
+  },
+  "homepage": "https://github.com/winterfreddy/tandem-trivia-challenge#readme"
+}
