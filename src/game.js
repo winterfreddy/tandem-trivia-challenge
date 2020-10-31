@@ -30,7 +30,9 @@ function master() {
     }
 
     function shuffleAns(array) {
-        if(array.length !== 4) array.push("Blank Space");
+        if(array.length < 4) {
+            while(array.length !== 4) array.push("Blank Space");
+        }
         array.sort(() => Math.random() - 0.5);
         return array;
     }
